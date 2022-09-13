@@ -38,20 +38,17 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-// //Prints out win information, checks who won the most rounds
-// function bestOfFive(userWins, computerWins, ties){
-//     console.log(`Player wins: ${userWins} Computer wins: ${computerWins} Ties: ${ties}`)
-    
-//     if(userWins > computerWins){
-//         console.log(`Congrats, you beat the computer ${userWins} time(s). You won!`);
-//     }
-//     else if (userWins < computerWins){
-//         console.log(`Aww, you only won ${userWins} time(s). Better luck next time!`);
-//     }
-//     else{
-//         console.log("Wow it's a complete tie! Try to beat me next time!");
-//     }
-// }
+//Prints out win information, checks who won the most rounds
+function announceWinner(userWins, computerWins){
+    const winner = document.querySelector("#winner");
+
+    if(userWins > computerWins){
+        winner.textContent = `Congratulations, you won!`;
+    }
+    else{
+        winner.textContent = 'The computer won! Better luck next time!';
+    }
+}
 
 //Event listeners for buttons
 const buttons = document.querySelectorAll(".btn"); //Nodelist of items with id "btn"
@@ -91,7 +88,11 @@ function game(playerSelection){
         currentResults.textContent = `User wins: ${userWins} 
                                     Computer wins: ${computerWins} 
                                     Ties: ${ties}`;
+
+        if(userWins === 5 || computerWins === 5){
+            announceWinner(userWins, computerWins);
+        }
     }
 
-    // bestOfFive(userWins, computerWins, ties);
+   
 }
