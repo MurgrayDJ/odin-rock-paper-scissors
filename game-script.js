@@ -3,15 +3,6 @@
 //UI update: 9/13/2022
 //Purpose: To play 5 rounds of rock, paper, scissors
 
-//Event listeners for buttons
-const buttons = document.querySelectorAll(".btn"); //Nodelist of items with id "btn"
-buttons.forEach((button) => {
-    button.addEventListener('click', () => {
-        const playerSelection = button.id;
-        playRound(playerSelection, getComputerChoice());
-    })
-});
-
 
 //Gets the computer to randomly choose an int representing rock, paper, or scissors
 function getComputerChoice(){
@@ -28,7 +19,7 @@ function getComputerChoice(){
 function playRound(playerSelection, computerSelection) {
     const pS = playerSelection;
     const cS = computerSelection;
-    const resultMsg = document.querySelector("#resultArea");
+    const resultMsg = document.querySelector("#currentRound");
 
     if(pS === cS){
         resultMsg.textContent = "It's a tie!";
@@ -62,30 +53,45 @@ function playRound(playerSelection, computerSelection) {
 //     }
 // }
 
+//Event listeners for buttons
+const buttons = document.querySelectorAll(".btn"); //Nodelist of items with id "btn"
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        const playerSelection = button.id;
+        game(playerSelection);
+    })
+});
+
+let userWins = 0;
+let computerWins = 0;
+let ties = 0;
 
 //Plays five rounds of rock paper scissors. Keeps track of player wins, computer wins,
 //and ties
-// function game(){
-//     console.log("Let's play Rock, Paper, Scissors!");
-//     let userWins = 0;
-//     let computerWins = 0;
-//     let ties = 0;
+function game(playerSelection){
+    let currentWinner;
     
-//     for(let i = 1; i < 6; i++){
-//         console.log(`Round ${i}:`); 
-//         let currentWinner = playRound(getUserChoice(), getComputerChoice());
-//         if(currentWinner === 'user'){
-//             userWins++;
-//         }
-//         else if (currentWinner === 'computer'){
-//             computerWins++;
-//         }
-//         else{
-//             ties++;
-//         }
-//     }
+    if(userWins < 5 && computerWins < 5){
 
-//     bestOfFive(userWins, computerWins, ties);
-// }
+        currentWinner = playRound(playerSelection, getComputerChoice());
 
-// game();
+        //Increments each tally based on winner or tie
+        if(currentWinner === 'user'){
+            userWins++;
+        }
+        else if (currentWinner === 'computer'){
+            computerWins++;
+        }
+        else{
+            ties++;
+        }
+
+        //Displays current totals
+        const currentResults = document.querySelector("#runningTotals");
+        currentResults.textContent = `User wins: ${userWins} 
+                                    Computer wins: ${computerWins} 
+                                    Ties: ${ties}`;
+    }
+
+    // bestOfFive(userWins, computerWins, ties);
+}
