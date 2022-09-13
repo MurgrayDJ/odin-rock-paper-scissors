@@ -18,30 +18,31 @@ function getComputerChoice(){
     let randInt = Math.floor(Math.random() * 3);
 
     switch(randInt){
-        case 0: return 'Rock';
-        case 1: return 'Paper';
-        case 2: return 'Scissors';
+        case 0: return 'rock';
+        case 1: return 'paper';
+        case 2: return 'scissors';
     }
 }
 
 //Plays one round, returns whether it's a tie, win for computer, or win for user
 function playRound(playerSelection, computerSelection) {
-    let pS = playerSelection.toLowerCase();
-    let cS = computerSelection.toLowerCase();
+    const pS = playerSelection;
+    const cS = computerSelection;
+    const resultMsg = document.querySelector("#resultArea");
 
     if(pS === cS){
-        console.log("It's a tie!");
+        resultMsg.textContent = "It's a tie!";
         return 'tie';
     }
     else if(pS === "rock" && cS === "paper" ||
             pS === "paper" && cS === "scissors" ||
             pS === "scissors" && cS === "rock"){
         
-        console.log(`You lose! ${cS} beats ${pS}!`);
+        resultMsg.textContent = `You lose! ${cS} beats ${pS}!`;
         return 'computer';
     }
     else{
-        console.log(`You win! ${pS} beats ${cS}!`);
+        resultMsg.textContent = `You win! ${pS} beats ${cS}!`;
         return 'user';
     }
 }
