@@ -5,16 +5,33 @@ html, body{
 
 body{
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+}
+
+#buttons{
+    display: flex;
+    height: 25%;
+    width: 25%;
+    justify-content: space-between;
     align-items: center;
 }
 
 button{
     display: flex;
     flex-direction: column;
+    height: max-content;
+    width: max-content;
 }
 
 .btn-icon{
     height: 50px;
     width: 50px;
+}
+
+#result-area{
+    border: solid black;
+    width: 25%;
+    height: 25%;
 }
