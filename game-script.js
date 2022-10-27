@@ -19,7 +19,7 @@ function getComputerChoice(){
 function playRound(playerSelection, computerSelection) {
     const pS = playerSelection;
     const cS = computerSelection;
-    const resultMsg = document.querySelector("#currentRound");
+    const resultMsg = document.getElementById("current-round");
 
     if(pS === cS){
         resultMsg.textContent = "It's a tie!";
@@ -40,7 +40,7 @@ function playRound(playerSelection, computerSelection) {
 
 //Prints out win information, checks who won the most rounds
 function announceWinner(userWins, computerWins){
-    const winner = document.querySelector("#winner");
+    const winner = document.getElementById("winner");
 
     if(userWins > computerWins){
         winner.textContent = `Congratulations, you won!`;
@@ -84,7 +84,7 @@ function game(playerSelection){
         }
 
         //Displays current totals
-        const currentResults = document.querySelector("#runningTotals");
+        const currentResults = document.getElementById("running-totals");
         currentResults.textContent = `User wins: ${userWins} 
                                     Computer wins: ${computerWins} 
                                     Ties: ${ties}`;
