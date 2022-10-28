@@ -51,7 +51,7 @@ function announceWinner(userWins, computerWins){
 }
 
 //Event listeners for buttons
-const buttons = document.querySelectorAll(".btn"); //Nodelist of items with id "btn"
+const buttons = document.querySelectorAll(".play-btn"); //Nodelist of items with class "play-btn"
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
         const playerSelection = button.id;
