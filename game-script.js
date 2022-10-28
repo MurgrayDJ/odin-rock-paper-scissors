@@ -5,7 +5,7 @@
 
 
 
-//Event listeners for buttons
+//Event listeners for play buttons
 const buttons = document.querySelectorAll(".play-btn"); //Nodelist of items with class "play-btn"
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
@@ -20,6 +20,7 @@ let ties = 0;
 
 //Plays five rounds of rock paper scissors. Keeps track of player wins, computer wins,
 //and ties
+const currentResults = document.getElementById("running-totals");
 function game(playerSelection){
     let currentWinner;
     
@@ -39,7 +40,6 @@ function game(playerSelection){
         }
 
         //Displays current totals
-        const currentResults = document.getElementById("running-totals");
         currentResults.textContent = `User wins: ${userWins} 
                                     Computer wins: ${computerWins} 
                                     Ties: ${ties}`;
@@ -86,8 +86,8 @@ function getComputerChoice(){
 }
 
 //Prints out win information, checks who won the most rounds
+const winner = document.getElementById("winner");
 function announceWinner(userWins, computerWins){
-    const winner = document.getElementById("winner");
 
     if(userWins > computerWins){
         winner.textContent = `Congratulations, you won!`;
@@ -95,4 +95,22 @@ function announceWinner(userWins, computerWins){
     else{
         winner.textContent = 'The computer won! Better luck next time!';
     }
+}
+
+
+const restartBtn = document.getElementById('reset-btn')
+restartBtn.addEventListener('click', () => {
+    restartGame();
+});
+
+const currentRound = document.getElementById('current-round');
+function restartGame(){
+
+    currentRound.textContent = 'Click one of the buttons above to start playing!';
+    currentResults.textContent = '';
+    winner.textContent = '';
+
+    userWins = 0;
+    computerWins = 0;
+    ties = 0;
 }
