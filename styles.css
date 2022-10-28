@@ -9,6 +9,16 @@ body{
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
+    background-image: url(images/rock-paper-scissors.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.212);
+    /* background-image: url(images/icons/rock.svg), url(images/icons/paper.svg);
+    background-position: right center, left center;
+    background-repeat: no-repeat no-repeat;
+    background-size: 500px 300px; */
 }
 
 #content-area{
@@ -17,21 +27,24 @@ body{
     align-items: stretch;
     height: 500px;
     width: 500px;
+    padding: 15px;
+    border-radius: 15px;
 }
 
 #buttons{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex: 1 1 auto;
+    flex: 1 1 50%;
 }
 
 button{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    height: 100px;
-    width: 85px;
+    height: 150px;
+    width: 125px;
     padding: 15px;
 }
 
@@ -48,5 +61,5 @@ button{
 
 #result-area{
     border: solid black;
-    flex: 1 1 auto;
+    flex: 1 1 50%;
 }
