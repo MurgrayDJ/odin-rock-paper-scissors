@@ -41,6 +41,7 @@ h1{
     display: flex;
     justify-content: center;
     align-items: center;
+    border: solid black;
 }
 
 #content-area{
@@ -56,6 +57,10 @@ h1{
     justify-content: space-between;
     align-items: center;
     flex: 0 1 50%;
+}
+
+.play-btn:hover, #reset-btn:hover{
+    background-color: lightgray;
 }
 
 .play-btn{
@@ -94,6 +99,6 @@ h1{
     width: 100%;
     margin-top: 30px;
     height: 50px;
-    border-radius: 5px;
+    border-radius: 10px;
     background-color: whitesmoke;
 }
