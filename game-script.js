@@ -21,6 +21,9 @@ let ties = 0;
 //Plays five rounds of rock paper scissors. Keeps track of player wins, computer wins,
 //and ties
 const currentResults = document.getElementById("running-totals");
+const userWinsCell = document.getElementById("user-wins-cell");
+const computerWinsCell = document.getElementById("computer-wins-cell");
+const tiesCell = document.getElementById("ties-cell");
 function game(playerSelection){
     let currentWinner;
     
@@ -39,10 +42,10 @@ function game(playerSelection){
             ties++;
         }
 
-        //Displays current totals
-        currentResults.textContent = `User wins: ${userWins} 
-                                    Computer wins: ${computerWins} 
-                                    Ties: ${ties}`;
+        //Update win values
+        userWinsCell.textContent = userWins;
+        computerWinsCell.textContent = computerWins;
+        tiesCell.textContent = ties;
 
         if(userWins === 5 || computerWins === 5){
             announceWinner(userWins, computerWins);
