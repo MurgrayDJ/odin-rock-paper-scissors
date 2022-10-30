@@ -108,7 +108,7 @@ restartBtn.addEventListener('click', () => {
 const currentRound = document.getElementById('current-round');
 function restartGame(){
 
-    currentRound.textContent = 'Click one of the buttons above to start playing!';
+    currentRound.textContent = 'Click one of the buttons above to start playing! Best of 5 wins!';
     winner.textContent = '';
 
     userWins = userWinsCell.textContent = 0;
