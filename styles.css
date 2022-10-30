@@ -127,8 +127,13 @@ table>tfoot:not(:last-child) {
  border-bottom: 1px solid gray;
 }
 
+th{
+    font-weight: normal;
+}
+
 td{
     text-align: center;
+    width: 35%;
 }
 
 
