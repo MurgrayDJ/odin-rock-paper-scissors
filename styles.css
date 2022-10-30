@@ -15,14 +15,9 @@ body{
     height: 100%;
     background-size: cover;
     background-color: rgba(0, 0, 0, 0.212);
-    /* background-image: url(images/icons/rock.svg), url(images/icons/paper.svg);
-    background-position: right center, left center;
-    background-repeat: no-repeat no-repeat;
-    background-size: 500px 300px; */
 }
 
 #platform{
-    /* padding: 0 15px 15px 15px; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -93,7 +88,49 @@ h1{
     background-color: rgba(0, 0, 0, 0.39);
     color: white;
     padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+#totals-table{
+    background-color: whitesmoke;
+    color: black;
+    height: 30%;
+    width: 100%;
+    margin: 15px 0;
+}
+
+table{
+    border-spacing: 0;
+    border-collapse: separate;
+    border-radius: 15px;
+    border: 1px solid gray;
+}
+
+table th:not(:last-child),
+table td:not(:last-child) {
+ border-right: 1px solid gray;
+}
+
+table>thead>tr:not(:last-child)>th,
+table>thead>tr:not(:last-child)>td,
+table>tbody>tr:not(:last-child)>th,
+table>tbody>tr:not(:last-child)>td,
+table>tfoot>tr:not(:last-child)>th,
+table>tfoot>tr:not(:last-child)>td,
+table>tr:not(:last-child)>td,
+table>tr:not(:last-child)>th,
+table>thead:not(:last-child),
+table>tbody:not(:last-child),
+table>tfoot:not(:last-child) {
+ border-bottom: 1px solid gray;
+}
+
+td{
+    text-align: center;
+}
+
 
 #reset-btn{
     width: 100%;
