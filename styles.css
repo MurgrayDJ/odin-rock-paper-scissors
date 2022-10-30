@@ -136,6 +136,9 @@ td{
     width: 35%;
 }
 
+#winner{
+    font-size: xx-large;
+}
 
 #reset-btn{
     width: 100%;

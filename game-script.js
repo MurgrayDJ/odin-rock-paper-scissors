@@ -20,7 +20,6 @@ let ties = 0;
 
 //Plays five rounds of rock paper scissors. Keeps track of player wins, computer wins,
 //and ties
-const currentResults = document.getElementById("running-totals");
 const userWinsCell = document.getElementById("user-wins-cell");
 const computerWinsCell = document.getElementById("computer-wins-cell");
 const tiesCell = document.getElementById("ties-cell");
@@ -110,10 +109,9 @@ const currentRound = document.getElementById('current-round');
 function restartGame(){
 
     currentRound.textContent = 'Click one of the buttons above to start playing!';
-    currentResults.textContent = '';
     winner.textContent = '';
 
-    userWins = 0;
-    computerWins = 0;
-    ties = 0;
+    userWins = userWinsCell.textContent = 0;
+    computerWins = computerWinsCell.textContent = 0;
+    ties = tiesCell.textContent = 0;
 }
